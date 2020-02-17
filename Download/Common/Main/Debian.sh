@@ -38,7 +38,7 @@ echo -e "\n"
 cd /root
 apt-get install apt-transport-https -y
 apt-get install x-window-system-core -y
-apt-get install mate-desktop-environment-extras locales vim -y
+apt-get install mate-desktop-environment-core locales vim -y
 echo '# This file lists locales that you wish to have built. You can find a list
 # of valid supported locales at /usr/share/i18n/SUPPORTED, and you can add
 # user defined locales to /usr/local/share/i18n/SUPPORTED. If you change
@@ -524,10 +524,10 @@ zh_CN.UTF-8 UTF-8
 # zu_ZA.UTF-8 UTF-8
 # en_US.UTF-8 UTF-8'>/etc/locale.gen
 locale-gen
-update-locale "LANG=zh_CN.UTF-8"
-locale-gen --purge "zh_CN.UTF-8"
+update-locale "LANG=en_US.UTF-8"
+locale-gen --purge "en_US.UTF-8"
 dpkg-reconfigure --frontend noninteractive locales
-localectl set-locale LANG=zh_CN.UTF-8
+localectl set-locale LANG=en_US.UTF-8
 apt-get install xfonts-intl-chinese xfonts-wqy -y
 apt-get install fontforge software-properties-common -y
 apt-get install ibus-libpinyin net-tools network-manager network-manager-gnome -y
@@ -585,43 +585,7 @@ echo "--------------------------------------------------------------------------
 echo -e "\n"
 cd /root
 apt-get install xrdp tigervnc-standalone-server -y
-cd /etc/xrdp/
-cat <<EOF | sudo patch -p1
---- a/xrdp.ini     2017-06-19 14:05:53.290490260 +0900
-+++ b/xrdp.ini  2017-06-19 14:11:17.788557402 +0900
-@@ -147,15 +147,6 @@ tcutils=true
- ; Session types
- ;
 
--[Xorg]
--name=Xorg
--lib=libxup.so
--username=ask
--password=ask
--ip=127.0.0.1
--port=-1
--code=20
--
- [Xvnc]
- name=Xvnc
- lib=libvnc.so
-@@ -166,6 +157,15 @@ port=-1
- #xserverbpp=24
- #delay_ms=2000
-
-+[Xorg]
-+name=Xorg
-+lib=libxup.so
-+username=ask
-+password=ask
-+ip=127.0.0.1
-+port=-1
-+code=20
-+
- [console]
- name=console
- lib=libvnc.so
-EOF
 cd /root
 touch ~/.Xclients
 echo "mate-session" > ~/.Xclients
@@ -652,5 +616,4 @@ echo "--------------------------------------------------------------------------
 echo "from https://tech.cxthhhhh.com - 2018/09/11 - clive2000"
 echo "---------------------------------------------------------------------------------------------------------------------"
 sleep 5s
-reboot
 echo -e "\n"
