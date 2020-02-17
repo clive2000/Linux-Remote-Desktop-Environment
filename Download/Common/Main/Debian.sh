@@ -14,13 +14,13 @@ echo -e "\033[33m It is recommended to use CentOS 7 installation, the following 
 echo "Recommended system : [Original] Network one-click Reinstall CentOS 7 (Official, Pure, Safe, Efficient)"
 echo "URL : https://tech.cxthhhhh.com/linux/2018/07/30/original-network-one-click-reinstall-centos-7-official-pure-safe-efficient-en.html"
 echo "---------------------------------------------------------------------------------------------------------------------"
-echo "from https://tech.cxthhhhh.com - 2018/09/10 - MeowLove"
+echo "from https://tech.cxthhhhh.com - 2018/09/10 - clive2000"
 echo "---------------------------------------------------------------------------------------------------------------------"
 echo Press any key to continue! Exit with 'Ctrl'+'C' !
 
 echo -e "\n"
 cd /root
-echo "Start creating Swaps Memory, please wait..."
+echo "Start creating 3GB Swaps Memory, please wait..."
 dd if=/dev/zero of=/var/swapd bs=1024 count=3145728
 mkswap /var/swapd
 chmod 0644 /var/swapd
@@ -541,38 +541,29 @@ echo "--------------------------------------------------------------------------
 echo -e "\033[32m Desktop environment is installed  is [OK] \033[0m"
 echo "---------------------------------------------------------------------------------------------------------------------"
 
-echo -e "\n"
-cd /root
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-apt-get update -y
-apt-get install google-chrome-stable -y
-echo "---------------------------------------------------------------------------------------------------------------------"
-echo -e "\033[32m Chrome Already installed  is [OK] \033[0m"
-echo "---------------------------------------------------------------------------------------------------------------------"
 
 echo -e "\n"
 cd /root
 dpkg --print-architecture
 sudo dpkg --add-architecture i386 && sudo apt update
-wget -nc https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Wine/Release.key
+wget -nc https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Wine/Release.key
 sudo apt-key add Release.key
 rm -rf Release.key
 apt-add-repository https://dl.winehq.org/wine-builds/debian/
 apt-get update -y
 sudo apt-get install --install-recommends winehq-stable -y
 mkdir -p  ~/.wine/drive_c/windows/Fonts/
-sudo wget -O ~/.wine/drive_c/windows/Fonts/msyh.ttc https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/msyh.ttc
-sudo wget -O ~/.wine/drive_c/windows/Fonts/msyhbd.ttc https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/msyhbd.ttc
-sudo wget -O ~/.wine/drive_c/windows/Fonts/msyhl.ttc https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/msyhl.ttc
-sudo wget -O ~/.wine/drive_c/windows/Fonts/simfang.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/simfang.ttf
-sudo wget -O ~/.wine/drive_c/windows/Fonts/simhei.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/simhei.ttf
-sudo wget -O ~/.wine/drive_c/windows/Fonts/simkai.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/simkai.ttf
-sudo wget -O ~/.wine/drive_c/windows/Fonts/SIMLI.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/SIMLI.ttf
-sudo wget -O ~/.wine/drive_c/windows/Fonts/simsun.ttc https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/simsun.ttc
-sudo wget -O ~/.wine/drive_c/windows/Fonts/SIMYOU.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/SIMYOU.ttf
-sudo wget -O ~/.wine/drive_c/windows/Fonts/仿宋_GB2312.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/仿宋_GB2312.ttf
-sudo wget -O ~/.wine/drive_c/windows/Fonts/楷体_GB2312.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/楷体_GB2312.ttf
+sudo wget -O ~/.wine/drive_c/windows/Fonts/msyh.ttc https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/msyh.ttc
+sudo wget -O ~/.wine/drive_c/windows/Fonts/msyhbd.ttc https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/msyhbd.ttc
+sudo wget -O ~/.wine/drive_c/windows/Fonts/msyhl.ttc https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/msyhl.ttc
+sudo wget -O ~/.wine/drive_c/windows/Fonts/simfang.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/simfang.ttf
+sudo wget -O ~/.wine/drive_c/windows/Fonts/simhei.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/simhei.ttf
+sudo wget -O ~/.wine/drive_c/windows/Fonts/simkai.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/simkai.ttf
+sudo wget -O ~/.wine/drive_c/windows/Fonts/SIMLI.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/SIMLI.ttf
+sudo wget -O ~/.wine/drive_c/windows/Fonts/simsun.ttc https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/simsun.ttc
+sudo wget -O ~/.wine/drive_c/windows/Fonts/SIMYOU.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/SIMYOU.ttf
+sudo wget -O ~/.wine/drive_c/windows/Fonts/仿宋_GB2312.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/仿宋_GB2312.ttf
+sudo wget -O ~/.wine/drive_c/windows/Fonts/楷体_GB2312.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/楷体_GB2312.ttf
 useradd -m RdpUser
 echo "cxthhhhh.com
 cxthhhhh.com
@@ -586,35 +577,9 @@ echo "--------------------------------------------------------------------------
 
 echo -e "\n"
 cd /root
-apt-get install snapd filezilla -y
-snap install firefox
-snap install remmina
+apt-get install firefox-esr -y
 echo "---------------------------------------------------------------------------------------------------------------------"
-echo -e "\033[32m Remmina FileZilla Firefox Already installed  is [OK] \033[0m"
-echo "---------------------------------------------------------------------------------------------------------------------"
-
-echo -e "\n"
-cd /root
-sudo wget -O ~/Libpng12-0.deb https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/WPS/Debian/libpng12-0_1.2.50-2+deb8u3_amd64.deb
-sudo dpkg -i ~/Libpng12-0.deb
-sudo wget -O ~/WPS-Office.deb https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/WPS/wps-office_10.1.0.5707_a21_amd64.deb
-sudo dpkg -i ~/WPS-Office.deb
-sudo wget -O ~/WPS-Office-Fonts.deb https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/WPS/wps-office-fonts_1.0_all.deb
-sudo dpkg -i ~/WPS-Office-Fonts.deb
-rm -rf ~/Libpng12-0.deb
-rm -rf ~/WPS-Office.deb
-rm -rf ~/WPS-Office-Fonts.deb
-sudo wget -O /usr/share/fonts/mtextra.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/mtextra.ttf
-sudo wget -O /usr/share/fonts/symbol.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/symbol.ttf
-sudo wget -O /usr/share/fonts/WEBDINGS.TTF https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/WEBDINGS.TTF
-sudo wget -O /usr/share/fonts/wingding.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/wingding.ttf
-sudo wget -O /usr/share/fonts/WINGDNG2.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/WINGDNG2.ttf
-sudo wget -O /usr/share/fonts/WINGDNG3.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/WINGDNG3.ttf
-sudo mkfontscale
-sudo mkfontdir
-sudo fc-cache
-echo "---------------------------------------------------------------------------------------------------------------------"
-echo -e "\033[32m WPS Office Already installed  is [OK] \033[0m"
+echo -e "\033[32m Firefox Already installed  is [OK] \033[0m"
 echo "---------------------------------------------------------------------------------------------------------------------"
 
 echo -e "\n"
@@ -682,9 +647,9 @@ echo "https://tech.cxthhhhh.com/linux/2018/08/07/original-one-click-installation
 echo "---------------------------------------------------------------------------------------------------------------------"
 echo "End to Desktop environment and Remote connection tool ! V2.0.2"
 echo -e "\033[33m Everything is ready and the system is restarting. Then you can connect via (RDP)IP:3389. \033[0m"
-echo "Normally, the [root] user is not recommended. The new user [RdpUser] has been created with the password [cxthhhhh.com]. Please change the default password as soon as possible after login."
+echo "Normally, the [root] user is not recommended. The new user [RdpUser] has been created with the password [cxthhhhh.com]. Please run passwd Rdpuser to change the password."
 echo "---------------------------------------------------------------------------------------------------------------------"
-echo "from https://tech.cxthhhhh.com - 2018/09/11 - MeowLove"
+echo "from https://tech.cxthhhhh.com - 2018/09/11 - clive2000"
 echo "---------------------------------------------------------------------------------------------------------------------"
 sleep 5s
 reboot
