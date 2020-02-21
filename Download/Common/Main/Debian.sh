@@ -612,9 +612,10 @@ echo "https://tech.cxthhhhh.com/linux/2018/08/07/original-one-click-installation
 echo "---------------------------------------------------------------------------------------------------------------------"
 echo "End to Desktop environment and Remote connection tool ! V2.0.2"
 echo -e "\033[33m Everything is ready and the system is restarting. Then you can connect via (RDP)IP:3389. \033[0m"
-echo "Normally, the [root] user is not recommended. The new user [RdpUser] has been created with the password [cxthhhhh.com]. Please run passwd Rdpuser to change the password."
+echo "Normally, the [root] user is not recommended. The new user [RdpUser] has been created with the password [cxthhhhh.com]. Please run passwd RdpUser to change the password."
 echo "---------------------------------------------------------------------------------------------------------------------"
 echo "from https://tech.cxthhhhh.com - 2018/09/11 - clive2000"
 echo "---------------------------------------------------------------------------------------------------------------------"
 sleep 5s
 echo -e "\n"
+

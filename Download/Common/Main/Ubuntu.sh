@@ -27,7 +27,7 @@ chmod 0644 /var/swapd
 swapon /var/swapd
 echo '/var/swapd   swap   swap   default 0 0' >> /etc/fstab
 apt-get update -y
-apt-get dist-upgrade -y
+#apt-get dist-upgrade -y
 apt-get install sudo curl wget patch -y
 apt --fix-broken install -y
 echo "---------------------------------------------------------------------------------------------------------------------"
@@ -540,16 +540,6 @@ echo "--------------------------------------------------------------------------
 
 echo -e "\n"
 cd /root
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-apt-get update -y
-apt-get install google-chrome-stable -y
-echo "---------------------------------------------------------------------------------------------------------------------"
-echo -e "\033[32m Chrome Already installed  is [OK] \033[0m"
-echo "---------------------------------------------------------------------------------------------------------------------"
-
-echo -e "\n"
-cd /root
 dpkg --print-architecture
 sudo dpkg --add-architecture i386 && sudo apt update
 wget -nc https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Wine/Release.key
@@ -571,6 +561,7 @@ sudo wget -O ~/.wine/drive_c/windows/Fonts/SIMYOU.ttf https://raw.githubusercont
 sudo wget -O ~/.wine/drive_c/windows/Fonts/仿宋_GB2312.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/仿宋_GB2312.ttf
 sudo wget -O ~/.wine/drive_c/windows/Fonts/楷体_GB2312.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/楷体_GB2312.ttf
 useradd -m RdpUser
+usermod -aG sudo RdpUser
 echo "cxthhhhh.com
 cxthhhhh.com
 " | passwd RdpUser
@@ -579,38 +570,6 @@ cp -rf ~/.wine/drive_c/windows/Fonts/* /home/RdpUser/.wine/drive_c/windows/Fonts
 chown -R RdpUser:RdpUser /home/RdpUser/.wine/drive_c/windows/Fonts/*
 echo "---------------------------------------------------------------------------------------------------------------------"
 echo -e "\033[32m Wine Already installed  is [OK] \033[0m"
-echo "---------------------------------------------------------------------------------------------------------------------"
-
-echo -e "\n"
-cd /root
-apt-get install snapd filezilla -y
-snap install remmina
-echo "---------------------------------------------------------------------------------------------------------------------"
-echo -e "\033[32m Remmina FileZilla Firefox Already installed  is [OK] \033[0m"
-echo "---------------------------------------------------------------------------------------------------------------------"
-
-echo -e "\n"
-cd /root
-sudo wget -O ~/Libpng12-0.deb https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/WPS/Debian/libpng12-0_1.2.50-2+deb8u3_amd64.deb
-sudo dpkg -i ~/Libpng12-0.deb
-sudo wget -O ~/WPS-Office.deb https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/WPS/wps-office_10.1.0.5707_a21_amd64.deb
-sudo dpkg -i ~/WPS-Office.deb
-sudo wget -O ~/WPS-Office-Fonts.deb https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/WPS/wps-office-fonts_1.0_all.deb
-sudo dpkg -i ~/WPS-Office-Fonts.deb
-rm -rf ~/Libpng12-0.deb
-rm -rf ~/WPS-Office.deb
-rm -rf ~/WPS-Office-Fonts.deb
-sudo wget -O /usr/share/fonts/mtextra.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/mtextra.ttf
-sudo wget -O /usr/share/fonts/symbol.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/symbol.ttf
-sudo wget -O /usr/share/fonts/WEBDINGS.TTF https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/WEBDINGS.TTF
-sudo wget -O /usr/share/fonts/wingding.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/wingding.ttf
-sudo wget -O /usr/share/fonts/WINGDNG2.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/WINGDNG2.ttf
-sudo wget -O /usr/share/fonts/WINGDNG3.ttf https://raw.githubusercontent.com/MeowLove/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Sys/WINGDNG3.ttf
-sudo mkfontscale
-sudo mkfontdir
-sudo fc-cache
-echo "---------------------------------------------------------------------------------------------------------------------"
-echo -e "\033[32m WPS Office Already installed  is [OK] \033[0m"
 echo "---------------------------------------------------------------------------------------------------------------------"
 
 echo -e "\n"
@@ -657,5 +616,4 @@ echo "--------------------------------------------------------------------------
 echo "from https://tech.cxthhhhh.com - 2018/09/11 - MeowLove"
 echo "---------------------------------------------------------------------------------------------------------------------"
 sleep 5s
-reboot
 echo -e "\n"
