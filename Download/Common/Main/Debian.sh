@@ -524,10 +524,10 @@ zh_CN.UTF-8 UTF-8
 # zu_ZA.UTF-8 UTF-8
 # en_US.UTF-8 UTF-8'>/etc/locale.gen
 locale-gen
-update-locale "LANG=en_US.UTF-8"
-locale-gen --purge "en_US.UTF-8"
+update-locale "LANG=zh_CN.UTF-8"
+# locale-gen --purge "en_US.UTF-8"
 dpkg-reconfigure --frontend noninteractive locales
-localectl set-locale LANG=en_US.UTF-8
+localectl set-locale LANG=zh_CN.UTF-8
 apt-get install xfonts-intl-chinese xfonts-wqy -y
 apt-get install fontforge software-properties-common -y
 apt-get install ibus-libpinyin net-tools network-manager network-manager-gnome -y
