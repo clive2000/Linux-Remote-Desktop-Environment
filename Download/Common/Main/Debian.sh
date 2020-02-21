@@ -565,6 +565,7 @@ sudo wget -O ~/.wine/drive_c/windows/Fonts/SIMYOU.ttf https://raw.githubusercont
 sudo wget -O ~/.wine/drive_c/windows/Fonts/仿宋_GB2312.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/仿宋_GB2312.ttf
 sudo wget -O ~/.wine/drive_c/windows/Fonts/楷体_GB2312.ttf https://raw.githubusercontent.com/clive2000/Linux-Remote-Desktop-Environment/master/Download/Common/Fonts/TTF-Wine/楷体_GB2312.ttf
 useradd -m RdpUser
+usermod -aG sudo RdpUser
 echo "cxthhhhh.com
 cxthhhhh.com
 " | passwd RdpUser
